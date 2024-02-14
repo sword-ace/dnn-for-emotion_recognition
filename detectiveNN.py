@@ -298,7 +298,6 @@ class DetectiveNN(nn.Module):
 
             # (l,b,2*h) [(2*bi,b,h) * 2]
             U_s, hidden = self.rnn(U)
-            # print("in dialogcrn, U AND U_s shape size", U.shape, U_s.shape)
 
         elif self.base_model == 'GRU':
             U_, qmask_ = U.transpose(0, 1), qmask
@@ -355,6 +354,6 @@ class DetectiveNN(nn.Module):
             logits = torch.cat([log_prob[:, j, :][:seq_lengths[j]] for j in range(len(seq_lengths))])
             return logits
 
-        # print("before dialogcrn, U_s AND U_p shape size", U_s.shape, U_p.shape) size seq_len, batch, dim
+        
         logits = self.detect_net(U_s, U_p, seq_lengths)
         return logits
