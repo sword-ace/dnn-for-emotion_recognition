@@ -1,8 +1,4 @@
-# DetectiveNN
-
-# DetectiveNN: Imitating Human Emotional Reasoning with a Recall-Detect-Predict Framework for Emotion Recognition in Conversations
-
-
+# (DNN）DetectiveNN
 
 
 ### Files
